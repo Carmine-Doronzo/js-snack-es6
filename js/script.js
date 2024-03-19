@@ -1,5 +1,5 @@
-console.log('Js Snack es6')
-
+console.log('Js Snack es6');
+console.log('Snack 1');
 /**SNACK 1*
 Dwayne Johnson ci ha chiesto di creare i segnaposto per il tavolo degli invitati alla sua mega festa vip.
 Ci ha lasciato il nome del tavolo (“Tavolo Vip”) e la lista degli invitati in ordine di posto:
@@ -28,18 +28,18 @@ function generateTable(VipName, TableName, siteNr) {
     return vip;
 }
 
-const invitati = ['Brad Pitt', 'Johnny Depp', 'Lady Gaga', 'Cristiano Ronaldo', 'Georgina Rodriguez', 'Chiara Ferragni', 'Fedez', 'George Clooney', 'Amal Clooney', 'Maneskin']
-const TavoloVIP =[]
-let site = 1
+const invitati = ['Brad Pitt', 'Johnny Depp', 'Lady Gaga', 'Cristiano Ronaldo', 'Georgina Rodriguez', 'Chiara Ferragni', 'Fedez', 'George Clooney', 'Amal Clooney', 'Maneskin'];
+const TavoloVIP =[];
+let site = 1;
 for(let i = 0; i < invitati.length; i++ ){
     
     let invitato = invitati[i];
-    invitato = generateTable(invitato,'Tavolo VIP',`${site++}`)
-    console.log(invitato)
-    TavoloVIP.push(invitato)
+    invitato = generateTable(invitato,'Tavolo VIP',`${site++}`);
+    //console.log(invitato);
+    TavoloVIP.push(invitato);
 }
 
-console.log(TavoloVIP)
+console.log(TavoloVIP);
 
 
 
@@ -63,3 +63,72 @@ Id   Name                    Grades
 196  Luigi Grimaldello 	  68
 102  Piero della Francesca   50
 120  Francesca da Polenta    84 */
+
+console.log('Snack 2');
+
+function generateStudentStatus(idStudente, nomeStudente, votoStudente) {
+    //dichiaro l'oggetto da riempire ogni volta con i parametri che inserisco quando dichiaro la funzione
+    const vip = {
+        id: idStudente,
+        nome: nomeStudente,
+        voto: votoStudente,
+
+    };
+    // mi dara come valore di ritorno un oggetto con tutti i parametri inseriti durante l'invocazione della funzione
+    return vip;
+}
+
+const studentiUpperCase = [];
+
+const voto70 = [];
+
+const voto70Id120 = [];
+
+const studentiObj = []
+
+const studenti = [
+    'Marco della Rovere',
+    'Paola Cortellessa',
+    'Andrea Mantegna',
+    'Gaia Borromini',
+    'Luigi Grimaldello',
+    'Piero della Francesca',
+    'Francesca da Polenta'
+];
+
+const ids = [213,110,250,145,196,102,120];
+const voti = [78,96,48,74,68,50,84];
+
+for(let i = 0;i < studenti.length; i++){
+    let studente = studenti[i].toUpperCase()
+
+    studentiUpperCase.push(studente);
+
+
+    studente = generateStudentStatus(ids[i],studente,voti[i])
+
+    studentiObj.push(studente);
+    
+
+    
+    
+
+};
+
+for(let i = 0; i < studentiObj.length; i++){
+    let studenteObj = studentiObj[i]
+
+    console.log(studenteObj)
+    if(studenteObj.voto > 70 && studenteObj.id > 120){
+        voto70Id120.push(studenteObj);
+    }else if(studenteObj.voto > 70){
+        voto70.push(studenteObj);
+    }
+}
+
+
+
+console.log(studentiObj);
+console.log(studentiUpperCase);
+console.log('array con solo voto > 70:',voto70);
+console.log('array con voto > 70 e ID >120:',voto70Id120);
