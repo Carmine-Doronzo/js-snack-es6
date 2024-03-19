@@ -29,12 +29,12 @@ function generateTable(VipName, TableName, siteNr) {
 }
 
 const invitati = ['Brad Pitt', 'Johnny Depp', 'Lady Gaga', 'Cristiano Ronaldo', 'Georgina Rodriguez', 'Chiara Ferragni', 'Fedez', 'George Clooney', 'Amal Clooney', 'Maneskin'];
-const TavoloVIP =[];
+const TavoloVIP = [];
 let site = 1;
-for(let i = 0; i < invitati.length; i++ ){
-    
+for (let i = 0; i < invitati.length; i++) {
+
     let invitato = invitati[i];
-    invitato = generateTable(invitato,'Tavolo VIP',`${site++}`);
+    invitato = generateTable(invitato, 'Tavolo VIP', `${site++}`);
     //console.log(invitato);
     TavoloVIP.push(invitato);
 }
@@ -96,39 +96,45 @@ const studenti = [
     'Francesca da Polenta'
 ];
 
-const ids = [213,110,250,145,196,102,120];
-const voti = [78,96,48,74,68,50,84];
+const ids = [213, 110, 250, 145, 196, 102, 120];
+const voti = [78, 96, 48, 74, 68, 50, 84];
 
-for(let i = 0;i < studenti.length; i++){
+for (let i = 0; i < studenti.length; i++) {
     let studente = studenti[i].toUpperCase()
 
     studentiUpperCase.push(studente);
 
 
-    studente = generateStudentStatus(ids[i],studente,voti[i])
+    studente = generateStudentStatus(ids[i], studente, voti[i])
 
     studentiObj.push(studente);
-    
 
-    
-    
+    if (studente.voto > 70) {
+        voto70.push(studente);
+        if (studente.id > 120) {
+            voto70Id120.push(studente);
+        }
+    }
+
+
 
 };
 
-for(let i = 0; i < studentiObj.length; i++){
+/*for (let i = 0; i < studentiObj.length; i++) {
     let studenteObj = studentiObj[i]
 
     console.log(studenteObj)
-    if(studenteObj.voto > 70 && studenteObj.id > 120){
-        voto70Id120.push(studenteObj);
-    }else if(studenteObj.voto > 70){
+    if (studenteObj.voto > 70) {
         voto70.push(studenteObj);
+        if (studenteObj.id > 120) {
+            voto70Id120.push(studenteObj);
+        }
     }
 }
-
+*/
 
 
 console.log(studentiObj);
 console.log(studentiUpperCase);
-console.log('array con solo voto > 70:',voto70);
-console.log('array con voto > 70 e ID >120:',voto70Id120);
+console.log('array con solo voto > 70:', voto70);
+console.log('array con voto > 70 e ID >120:', voto70Id120);
