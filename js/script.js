@@ -29,27 +29,24 @@ function generateTable(VipName, TableName, siteNr) {
 }
 
 const invitati = ['Brad Pitt', 'Johnny Depp', 'Lady Gaga', 'Cristiano Ronaldo', 'Georgina Rodriguez', 'Chiara Ferragni', 'Fedez', 'George Clooney', 'Amal Clooney', 'Maneskin'];
-const TavoloVIP = [];
-let site = 1;
+const TavoloVIP = invitati.map(function(el){generateTable(el,'Tavolo VIP',1)})
+
+//let site = 1;
+/*
 for (let i = 0; i < invitati.length; i++) {
-    let invitato
-    TavoloVIP.map((invitato,i) => {
-
-        invitato = generateTable(invitati[i],'Tavolo VIP',`${site++}`);
-
-    })
-    /*
+   
+    
     let invitato = invitati[i];
     invitato = generateTable(invitato, 'Tavolo VIP', `${site++}`);
     //console.log(invitato);
     TavoloVIP.push(invitato);
-    */
+    
    console.log(invitato)
 }
 
+
+*/
 console.log(TavoloVIP);
-
-
 
 
 
