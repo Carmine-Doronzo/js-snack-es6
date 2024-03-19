@@ -29,7 +29,11 @@ function generateTable(VipName, TableName, siteNr) {
 }
 
 const invitati = ['Brad Pitt', 'Johnny Depp', 'Lady Gaga', 'Cristiano Ronaldo', 'Georgina Rodriguez', 'Chiara Ferragni', 'Fedez', 'George Clooney', 'Amal Clooney', 'Maneskin'];
-const TavoloVIP = invitati.map(function(el){generateTable(el,'Tavolo VIP',1)})
+const TavoloVIP = invitati.map((el,idx) =>{
+    const vip = generateTable(el,'Tavolo VIP',idx + 1)
+    return vip;
+    
+});
 
 //let site = 1;
 /*
