@@ -32,11 +32,19 @@ const invitati = ['Brad Pitt', 'Johnny Depp', 'Lady Gaga', 'Cristiano Ronaldo', 
 const TavoloVIP = [];
 let site = 1;
 for (let i = 0; i < invitati.length; i++) {
+    let invitato
+    TavoloVIP.map((invitato,i) => {
 
+        invitato = generateTable(invitati[i],'Tavolo VIP',`${site++}`);
+
+    })
+    /*
     let invitato = invitati[i];
     invitato = generateTable(invitato, 'Tavolo VIP', `${site++}`);
     //console.log(invitato);
     TavoloVIP.push(invitato);
+    */
+   console.log(invitato)
 }
 
 console.log(TavoloVIP);
@@ -135,6 +143,6 @@ for (let i = 0; i < studenti.length; i++) {
 
 
 console.log(studentiObj);
-console.log(studentiUpperCase);
+//console.log(studentiUpperCase);
 console.log('array con solo voto > 70:', voto70);
 console.log('array con voto > 70 e ID >120:', voto70Id120);
