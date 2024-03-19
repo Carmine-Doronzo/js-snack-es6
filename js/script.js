@@ -75,48 +75,47 @@ Id   Name                    Grades
 
 console.log('Snack 2');
 
-function generateStudentStatus(idStudente, nomeStudente, votoStudente) {
-    //dichiaro l'oggetto da riempire ogni volta con i parametri che inserisco quando dichiaro la funzione
-    const vip = {
-        id: idStudente,
-        nome: nomeStudente,
-        voto: votoStudente,
 
-    };
-    // mi dara come valore di ritorno un oggetto con tutti i parametri inseriti durante l'invocazione della funzione
-    return vip;
-}
+let studentiUpperCase = [];
 
-const studentiUpperCase = [];
+let voto70 = [];
 
-const voto70 = [];
+let voto70Id120 = [];
 
-const voto70Id120 = [];
 
-const studentiObj = []
-
-const studenti = [
-    'Marco della Rovere',
-    'Paola Cortellessa',
-    'Andrea Mantegna',
-    'Gaia Borromini',
-    'Luigi Grimaldello',
-    'Piero della Francesca',
-    'Francesca da Polenta'
+let studenti = [
+    {id:213, nome:'Marco della Rovere',voto:78},
+    {id:110, nome:'Paola Cortellessa',voto:96},
+    {id:250, nome:'Andrea Mantegna',voto:48},
+    {id:145, nome:'Gaia Borromini',voto:74},
+    {id:196, nome:'Luigi Grimaldello',voto:68},
+    {id:102, nome:'Piero della Francesca',voto:50},
+    {id:120, nome:'Francesca da Polenta',voto:84},
 ];
 
-const ids = [213, 110, 250, 145, 196, 102, 120];
-const voti = [78, 96, 48, 74, 68, 50, 84];
 
+studentiUpperCase = studenti.map((el) => {
+    let studente = {
+        id: el.id,
+        nome: el.nome.toUpperCase(),
+        voto: el.voto
+    }
+
+    
+    return studente
+})
+
+voto70 = studentiUpperCase.filter((el) =>{return el.voto > 70} )
+voto70Id120 = studentiUpperCase.filter((el) =>{return el.voto > 70 && el.id > 120} )
+
+/*
 for (let i = 0; i < studenti.length; i++) {
-    let studente = studenti[i].toUpperCase()
+    let studente = studenti[i]
+    let studenteUp = studenti[i].nome.toUpperCase() 
 
-    studentiUpperCase.push(studente);
+    studentiUpperCase.push(studenteUp);
 
-
-    studente = generateStudentStatus(ids[i], studente, voti[i])
-
-    studentiObj.push(studente);
+    studente = studenti[i]
 
     if (studente.voto > 70) {
         voto70.push(studente);
@@ -128,7 +127,7 @@ for (let i = 0; i < studenti.length; i++) {
 
 
 };
-
+*/
 /*for (let i = 0; i < studentiObj.length; i++) {
     let studenteObj = studentiObj[i]
 
@@ -143,7 +142,7 @@ for (let i = 0; i < studenti.length; i++) {
 */
 
 
-console.log(studentiObj);
-//console.log(studentiUpperCase);
+//console.log(studentiObj);
+console.log(studentiUpperCase);
 console.log('array con solo voto > 70:', voto70);
 console.log('array con voto > 70 e ID >120:', voto70Id120);
