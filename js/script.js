@@ -237,7 +237,7 @@ Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengo
 
 console.log('Snack 4')
 
-const squads = [
+let squads = [
     {
         name: 'Juventus',
         points: 0,
@@ -292,16 +292,36 @@ const squads = [
 
 console.log(squads)
 
-const squadOnlyNameAndPenalty = []
+let squadsPointsPenalty = []
 
-for (let i = 0; i < squads.length; i++){
-    let {name,points,penalty} = squads[i]
+let squadsOnlyNameAndPenalty = []
 
-    points = Math.floor(Math.random() * 30);
-    penalty = Math.floor(Math.random() * 7);
+for(let i = 0; i<squads.length; i++){
+    let squad = {
+        name: squads[i].name,
+        points : Math.floor(Math.random() * 30),
+        penalty : Math.floor(Math.random() * 7)
+        
+    }
 
-    squadOnlyNameAndPenalty.push(name,penalty)
+    squadsPointsPenalty.push(squad)
 }
 
-console.log(squadOnlyNameAndPenalty)
+let {name,points,penalty} = squadsPointsPenalty
 
+
+
+squadsOnlyNameAndPenalty = squadsPointsPenalty.map((squad) => {
+    const squadEl = {
+        name,
+        penalty
+    }
+
+    return squad
+
+})
+
+
+
+console.log(squadsPointsPenalty)
+console.log(squadsOnlyNameAndPenalty)
