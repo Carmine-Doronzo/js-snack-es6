@@ -146,3 +146,60 @@ for (let i = 0; i < studenti.length; i++) {
 console.log(studentiUpperCase);
 console.log('array con solo voto > 70:', voto70);
 console.log('array con voto > 70 e ID >120:', voto70Id120);
+
+/*SNACK 3
+Creare un array di oggetti:
+Ogni oggetto descriverà una bici da corsa con le seguenti proprietà: nome e peso.
+Stampare in console la bici con peso minore utilizzando destructuring e template literal */
+console.log('Snack 3');
+function weight(){
+     
+
+    let weight = (Math.random() * 10).toFixed(2);
+
+    return weight;
+
+
+}
+
+//console.log(weight());
+
+
+
+let bicicle = [
+    {
+        model:'Atala',
+        peso: weight()
+    },
+    {
+        model:'Bianchi',
+        peso: weight()
+    },
+    {
+        model:'Bottecchia',
+        peso: weight()
+    },
+    {
+        model:'Piaggio',
+        peso: weight()
+    },
+    {
+        model:'Pinarello',
+        peso: weight()
+    },
+    {
+        model:'Garelli',
+        peso: weight()
+    },
+    {
+        model:'Basso',
+        peso: weight()
+    },
+    {
+        model:'Carrera',
+        peso: weight()
+    },
+
+]
+
+console.log(bicicle)
