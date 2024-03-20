@@ -202,4 +202,19 @@ let bicicle = [
 
 ]
 
+let i = 0
+
+for (let i = 0; i < bicicle.length; i++){
+    let pesoDaConfrontare = bicicle[i].peso;
+    
+    for(let j = 1; j < bicicle.length; j++){
+        if(pesoDaConfrontare < bicicle[j].peso){
+            console.log(false)
+        }
+    }
+}
+
+
+
 console.log(bicicle)
+console.log(bicicle[0].peso)
