@@ -152,7 +152,7 @@ Creare un array di oggetti:
 Ogni oggetto descriverà una bici da corsa con le seguenti proprietà: nome e peso.
 Stampare in console la bici con peso minore utilizzando destructuring e template literal */
 console.log('Snack 3');
-function weight(){
+function weightRandom(){
      
 
     let weight = (Math.random() * 10).toFixed(2);
@@ -169,59 +169,61 @@ function weight(){
 let bicicle = [
     {
         model:'Atala',
-        peso: weight()
+        weight: parseFloat(weightRandom())
     },
     {
         model:'Bianchi',
-        peso: weight()
+        weight: parseFloat(weightRandom())
     },
     {
         model:'Bottecchia',
-        peso: weight()
+        weight: parseFloat(weightRandom())
     },
     {
         model:'Piaggio',
-        peso: weight()
+        weight: parseFloat(weightRandom())
     },
     {
         model:'Pinarello',
-        peso: weight()
+        weight: parseFloat(weightRandom())
     },
     {
         model:'Garelli',
-        peso: weight()
+        weight: parseFloat(weightRandom())
     },
     {
         model:'Basso',
-        peso: weight()
+        weight: parseFloat(weightRandom())
     },
     {
         model:'Carrera',
-        peso: weight()
+        weight: parseFloat(weightRandom())
     },
 
 ]
 
+//let pesoMin = Math.min(...bicicle)
 
 
-let pesoDaConfrontare = 0
-//let trovata = false
 
-for (let i = 0; i < bicicle.length; i++){
-    pesoDaConfrontare = bicicle[i].peso;
+
+
+let lightestBike = bicicle[0]
+
+
+for (let i = 1; i < bicicle.length; i++){
     
-    for(let j = 1; j < bicicle.length; j++ ){
-        if(pesoDaConfrontare < bicicle[j].peso){
-            console.log(true);
-
-
-        }
+    if (bicicle[i].weight < lightestBike.weight){
+        lightestBike = bicicle[i]
+        
     }
 
     
 }
 
+const {model,weight} = lightestBike
 
-console.log(pesoDaConfrontare)
 console.log(bicicle)
-//console.log(bicicle[0].peso)
+console.log(lightestBike)
+console.log(`La piu' leggera e' la ${model} con un peso di ${weight}kg`)
+
