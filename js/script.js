@@ -237,6 +237,18 @@ Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengo
 
 console.log('Snack 4')
 
+function generateSquad(squadName, pointsSquad, PenaltySquad) {
+    //dichiaro l'oggetto da riempire ogni volta con i parametri che inserisco quando dichiaro la funzione
+    const squad = {
+        squad: squadName,
+        points: pointsSquad,
+        penatlty: PenaltySquad,
+
+    };
+    // mi dara come valore di ritorno un oggetto con tutti i parametri inseriti durante l'invocazione della funzione
+    return squad;
+}
+
 let squads = [
     {
         name: 'Juventus',
@@ -290,38 +302,36 @@ let squads = [
     }
 ];
 
-console.log(squads)
+console.log('squadre :',squads)
 
-let squadsPointsPenalty = []
+//let squadsPointsPenalty = []
 
-let squadsOnlyNameAndPenalty = []
+//let squadsOnlyNameAndPenalty = []
 
-for(let i = 0; i<squads.length; i++){
-    let squad = {
-        name: squads[i].name,
-        points : Math.floor(Math.random() * 30),
-        penalty : Math.floor(Math.random() * 7)
+// for(let i = 0; i<squads.length; i++){
+//     let squad = {
+//         name: squads[i].name,
+//         points : Math.floor(Math.random() * 30),
+//         penalty : Math.floor(Math.random() * 7)
         
-    }
+//     }
 
-    squadsPointsPenalty.push(squad)
-}
-
-let {name,points,penalty} = squadsPointsPenalty
+//     squadsPointsPenalty.push(squad)
+// }
 
 
-
-squadsOnlyNameAndPenalty = squadsPointsPenalty.map((squad) => {
-    const squadEl = {
-        name,
-        penalty
-    }
-
-    return squad
-
+squads.forEach((squad) =>{
+    squad.points = Math.floor(Math.random() * 30)
+    squad.penalty = Math.floor(Math.random() * 7)
 })
 
+const {name,points,penalty}=squads
 
+const squadNameAndPenalty = squads.map(({name,penalty}) =>{
+    return `la squadra ${name} e ha ${penalty} falli`
+})
 
-console.log(squadsPointsPenalty)
-console.log(squadsOnlyNameAndPenalty)
+console.log(squadNameAndPenalty)
+
+//console.log('squadre con punti generati e falli generati:',squadsPointsPenalty)
+//console.log('squadre con nomi e falli generati:',squadsOnlyNameAndPenalty)
